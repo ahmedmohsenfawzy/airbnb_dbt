@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard (Databricks)
+    type: dashboard
+    maturity: low
+    url: https://<your-databricks-workspace>/sql/dashboards/<dashboard-id>
+
+    description: Dashboard built in Databricks SQL showing Airbnb listings and hosts KPIs
+
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('mart_fullmoon_reviews')
+
+    owner:
+      name: ahmed
+      email: ahmedmohsen2077@gmail.com
